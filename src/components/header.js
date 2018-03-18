@@ -3,7 +3,7 @@ import ChatNavItem from './chatNavItem.js'
 
 class Header extends Component {
   state = {
-    msgNum: (this.props.msgNum) < 100 ? (this.props.msgNum) : 99,
+    msgNum: (this.props.msgNum) < 100 ? (this.props.msgNum) : 99 + '+',
   }
 
   render(){
@@ -19,7 +19,7 @@ class Header extends Component {
             <ChatNavItem navItem='help'/>
           </ul>
         <div className='header-items flex-property align-items-center'>
-          <div className='chat-msgs flex-property align-items-center'><i className="fa fa-envelope" aria-hidden="true"></i> <div className='msg-number white title-xxs bold-title'>{this.state.msgNum}</div></div>
+          <div className='chat-msgs flex-property align-items-center'><i className="fa fa-envelope" aria-hidden="true"></i> <div className='msg-number flex-property align-items-center justify-content-center white title-xxs bold-title'>{this.state.msgNum}</div></div>
           <div className='chat-user-container flex-property align-items-center margin-right-20'>
             <div className='chat-username margin-left-20 margin-right-10 title-m'>Bob M.</div>
             <img src='https://i.imgur.com/LMAuull.jpg' />
