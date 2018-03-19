@@ -187,6 +187,15 @@ body {
   margin: 20px 0px;
 }
 
+.chat-item-posted {
+  flex-direction: row-reverse;
+}
+
+.chat-item-posted .chat-text{
+  border-radius: 15px;
+  border-top-right-radius: 0px;
+}
+
 .chat-img-container {
   align-self: flex-start;
   position: relative;
@@ -242,8 +251,11 @@ body {
   border: none;
   width: 100%;
   padding: 0;
-  text-transform: uppercase;
   padding: 5px;
+}
+
+.chat-textarea-container textarea::placeholder {
+  text-transform: uppercase;
 }
 
 .chat-icon-container {
