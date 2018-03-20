@@ -134,7 +134,7 @@ body {
 }
 
 .chat-msg-container {
-  height: 81vh;
+  height: 81.9vh;
   overflow-y: scroll;
 }
 
@@ -189,6 +189,7 @@ body {
 
 .chat-item-posted {
   flex-direction: row-reverse;
+  margin: 20px 0px 10px;
 }
 
 .chat-item-posted .chat-text{
@@ -246,12 +247,12 @@ body {
   border-top: 1px solid #D5C5C8;
 }
 
-.chat-textarea-container textarea {
+.chat-textarea-container input {
   resize: none;
   border: none;
-  width: 100%;
+  width: 97%;
   padding: 0;
-  padding: 5px;
+  padding: 10px;
 }
 
 .chat-textarea-container textarea::placeholder {

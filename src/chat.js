@@ -11,7 +11,33 @@ import ChatUserItem from './components/chatUserItem.js'
 import ChatItem from './components/chatItem.js'
 import ChatProfileContainer from './components/chatProfileContainer.js'
 
+import ChatTextarea from './components/chatTextarea.js'
+import {friendReplies} from './friendReplies.json'
+
 class Chat extends Component {
+  state = {
+    reply: '',
+    friendReplies: friendReplies,
+  }
+
+  constructor(props) {
+    super(props);
+
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  handleChange(event) {
+    this.setState({reply: event.target.value});
+  }
+
+  handleSubmit(event) {
+    event.preventDefault();
+    this.setState({
+      friendReplies: [...this.state.friendReplies, { chatFriendImg: "https://i.imgur.com/1ls2fTv.png", onlineStatus: false, userPosting: true, chatReply: this.state.reply}],
+      reply: ''
+    })
+  }
   render() {
     return (
       <div className="chat-container">
@@ -57,39 +83,20 @@ class Chat extends Component {
           </div>
           <div className='chat-middle-container flex-property flex-direction-column flex-2'>
             <div className='chat-text-container'>
-              <ChatItem
-                chatFriendImg='https://i.imgur.com/1ASbjkR.jpg'
-                onlineStatus={true}
-                chatText='da diseee! consectetur adipiscing elit. Vestibulum enim metus, sagittis at metus et, cursus vestibulum lacus. Duis quis varius sapien.'
-              />
-              <ChatItem
-                chatItemPosted='chat-item-posted'
-                chatFriendImg='https://i.imgur.com/1ASbjkR.jpg'
-                onlineStatus={true}
-                chatText='da diseee! consectetur adipiscing elit. Vestibulum enim metus, sagittis at metus et, cursus vestibulum lacus. Duis quis varius sapien.'
-              />
-              <ChatItem
-                chatFriendImg='https://i.imgur.com/1ASbjkR.jpg'
-                onlineStatus={true}
-                chatText='da diseee! consectetur adipiscing elit. Vestibulum enim metus, sagittis at metus et, cursus vestibulum lacus. Duis quis varius sapien.'
-              />
-              <ChatItem
-                chatFriendImg='https://i.imgur.com/1ASbjkR.jpg'
-                onlineStatus={true}
-                chatText='da diseee! consectetur adipiscing elit. Vestibulum enim metus, sagittis at metus et, cursus vestibulum lacus. Duis quis varius sapien.'
-              />
-              <ChatItem
-                chatFriendImg='https://i.imgur.com/1ASbjkR.jpg'
-                onlineStatus={true}
-                chatText='da diseee! consectetur adipiscing elit. Vestibulum enim metus, sagittis at metus et, cursus vestibulum lacus. Duis quis varius sapien.'
-              />
+              {this.state.friendReplies.map((item, num) =>
+                <ChatItem
+                  comments={this.state.friendReplies}
+                  value={this.state.reply}
+                  handleChange={this.handleChange}
+                  handleSubmit={this.handleSubmit}
+                  chatFriendImg={item.chatFriendImg}
+                  onlineStatus={item.onlineStatus}
+                  userPosting={item.userPosting}
+                  chatReply={item.chatReply}
+                />
+              )}
             </div>
-            <div className='chat-textarea-container'>
-              <textarea className='font-lato title-s' placeholder='write a reply' row='2' />
-              <div className='chat-icon-container'>
-                <div className='chat-icon-item'>aaa</div>
-              </div>
-            </div>
+            <ChatTextarea value={this.state.comment} handleChange={this.handleChange} handleSubmit={this.handleSubmit} />
           </div>
           <ChatProfileContainer
             chatFriendName='robbie timms'
