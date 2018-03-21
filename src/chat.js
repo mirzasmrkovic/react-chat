@@ -12,12 +12,15 @@ import ChatItem from './components/chatItem.js'
 import ChatProfileContainer from './components/chatProfileContainer.js'
 
 import ChatTextarea from './components/chatTextarea.js'
+
+import {chatUserItem} from './chatUserItem.json'
 import {friendReplies} from './friendReplies.json'
 
 class Chat extends Component {
   state = {
     reply: '',
     friendReplies: friendReplies,
+    chatUserItem: chatUserItem,
   }
 
   constructor(props) {
@@ -34,10 +37,11 @@ class Chat extends Component {
   handleSubmit(event) {
     event.preventDefault();
     this.setState({
+      reply: '',
       friendReplies: [...this.state.friendReplies, { chatFriendImg: "https://i.imgur.com/1ls2fTv.png", onlineStatus: false, userPosting: true, chatReply: this.state.reply}],
-      reply: ''
     })
   }
+
   render() {
     return (
       <div className="chat-container">
@@ -48,41 +52,20 @@ class Chat extends Component {
             <input placeholder='Search messages'/>
           </div>
             <div className='chat-msg-container'>
-              <ChatUserItem
-                chatFriendImg='https://i.imgur.com/1ASbjkR.jpg'
-                onlineStatus={true}
-                friendName='halid beslic'
-                friendLastMsg='Masiraj da dise.'
-                openChat={true}
-              />
-              <ChatUserItem
-                chatFriendImg='https://i.imgur.com/1ASbjkR.jpg'
-                onlineStatus={false}
-                friendName='hanka paldum'
-                friendLastMsg='Masiraj da dise.'
-              />
-              <ChatUserItem
-                chatFriendImg='https://i.imgur.com/1ASbjkR.jpg'
-                onlineStatus={false}
-                friendName='halid beslic'
-                friendLastMsg='Masiraj da dise.'
-              />
-              <ChatUserItem
-                chatFriendImg='https://i.imgur.com/1ASbjkR.jpg'
-                onlineStatus={false}
-                friendName='halid beslic'
-                friendLastMsg='Masiraj da dise.'
-              />
-              <ChatUserItem
-                chatFriendImg='https://i.imgur.com/1ASbjkR.jpg'
-                onlineStatus={false}
-                friendName='halid beslic'
-                friendLastMsg='Masiraj da dise.'
-              />
+              {this.state.chatUserItem.map((item, num) =>
+                <ChatUserItem
+                  onClick
+                  chatFriendImg={item.chatFriendImg}
+                  onlineStatus={item.onlineStatus}
+                  friendName={item.friendName}
+                  friendLastMsg={item.friendLastMsg}
+                  openChat={item.openChat}
+                />
+              )}
             </div>
           </div>
           <div className='chat-middle-container flex-property flex-direction-column flex-2'>
-            <div className='chat-text-container'>
+            <div ref="messages" className='chat-text-container'>
               {this.state.friendReplies.map((item, num) =>
                 <ChatItem
                   comments={this.state.friendReplies}
@@ -96,7 +79,7 @@ class Chat extends Component {
                 />
               )}
             </div>
-            <ChatTextarea value={this.state.comment} handleChange={this.handleChange} handleSubmit={this.handleSubmit} />
+            <ChatTextarea value={this.state.reply} handleChange={this.handleChange} handleSubmit={this.handleSubmit} />
           </div>
           <ChatProfileContainer
             chatFriendName='robbie timms'
