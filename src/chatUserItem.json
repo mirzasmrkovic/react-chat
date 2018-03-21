@@ -4,36 +4,31 @@
       "chatFriendImg": "https://i.imgur.com/1ASbjkR.jpg",
       "onlineStatus": true,
       "friendName": "halid beslic",
-      "friendLastMsg": "Masiraj da dise.",
-      "openChat": true
+      "friendLastMsg": "Masiraj da dise."
 		},
     {
       "chatFriendImg": "https://i.imgur.com/1ASbjkR.jpg",
       "onlineStatus": true,
       "friendName": "hanka paludm",
-      "friendLastMsg": "Masiraj da dise.",
-      "openChat": false
+      "friendLastMsg": "Masiraj da dise."
 		},
     {
       "chatFriendImg": "https://i.imgur.com/1ls2fTv.png",
       "onlineStatus": false,
       "friendName": "Vladimir putin",
-      "friendLastMsg": "Masiraj da dise.",
-      "openChat": false
+      "friendLastMsg": "Masiraj da dise."
 		},
     {
       "chatFriendImg": "https://i.imgur.com/1ASbjkR.jpg",
       "onlineStatus": true,
       "friendName": "halid beslic",
-      "friendLastMsg": "Masiraj da dise.",
-      "openChat": false
+      "friendLastMsg": "Masiraj da dise."
 		},
     {
       "chatFriendImg": "https://i.imgur.com/1ls2fTv.png",
       "onlineStatus": true,
       "friendName": "halid beslic",
-      "friendLastMsg": "Masiraj da dise.",
-      "openChat": false
+      "friendLastMsg": "Masiraj da dise."
 		}
 	]
 }

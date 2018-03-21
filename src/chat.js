@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
+import ReactDOM from 'react-dom'
 
 import './css/index.css'
 import './css/colorsFonts.css'
@@ -21,6 +22,7 @@ class Chat extends Component {
     reply: '',
     friendReplies: friendReplies,
     chatUserItem: chatUserItem,
+    test: true,
   }
 
   constructor(props) {
@@ -36,9 +38,30 @@ class Chat extends Component {
 
   handleSubmit(event) {
     event.preventDefault();
+    if (this.state.reply != '') {
+      this.setState({
+        reply: '',
+        friendReplies: [...this.state.friendReplies, { chatFriendImg: "https://i.imgur.com/1ls2fTv.png", onlineStatus: false, userPosting: true, chatReply: this.state.reply}],
+      })
+    }
+  }
+
+  scrollToBottom = () => {
+    const chatTextContainer = ReactDOM.findDOMNode(this.chatTextContainer);
+    chatTextContainer.scrollTop = chatTextContainer.scrollHeight;
+  }
+
+  componentDidMount() {
+    this.scrollToBottom()
+  }
+
+  componentDidUpdate() {
+    this.scrollToBottom()
+  }
+
+  _handleFriendMsg = () => {
     this.setState({
-      reply: '',
-      friendReplies: [...this.state.friendReplies, { chatFriendImg: "https://i.imgur.com/1ls2fTv.png", onlineStatus: false, userPosting: true, chatReply: this.state.reply}],
+      test: false,
     })
   }
 
@@ -54,18 +77,18 @@ class Chat extends Component {
             <div className='chat-msg-container'>
               {this.state.chatUserItem.map((item, num) =>
                 <ChatUserItem
-                  onClick
+                  key={num}
                   chatFriendImg={item.chatFriendImg}
                   onlineStatus={item.onlineStatus}
                   friendName={item.friendName}
                   friendLastMsg={item.friendLastMsg}
-                  openChat={item.openChat}
+                  openChat={false}
                 />
               )}
             </div>
           </div>
           <div className='chat-middle-container flex-property flex-direction-column flex-2'>
-            <div ref="messages" className='chat-text-container'>
+            <div ref={(el) => { this.chatTextContainer = el; }} className='chat-text-container'>
               {this.state.friendReplies.map((item, num) =>
                 <ChatItem
                   comments={this.state.friendReplies}

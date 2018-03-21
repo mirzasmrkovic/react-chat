@@ -2,16 +2,22 @@ import React, { Component } from 'react';
 
 class ChatUserItem extends Component {
   state = {
-    openChat: this.props.openChat && true ? 'chat-user-item-open' : '',
-    onlineStatus: this.props.onlineStatus && true ? 'chat-online' : 'chat-offline',
+    openChat: this.props.openChat,
+    onlineStatus: this.props.onlineStatus,
+  }
+
+  _handleOpenChat = () => {
+    this.setState({
+      openChat: !this.state.openChat,
+    })
   }
 
   render() {
     return (
-      <div className={this.state.openChat + ' chat-user-item flex-property align-items-center'}>
+      <div onClick={this._handleOpenChat} className={(this.state.openChat && true ? 'chat-user-item-open' : '') + ' chat-user-item flex-property align-items-center'}>
         <div className='chat-user-img-container'>
           <img src={this.props.chatFriendImg}/>
-          <div className={this.state.onlineStatus + ' chat-online-status'}></div>
+          <div className={(this.state.onlineStatus && true ? 'chat-online' : 'chat-offline') + ' chat-online-status'}></div>
         </div>
         <div className='user-item-text-container margin-left-10'>
           <div className='user-item-name title-l thin-title'>{this.props.friendName}</div>
