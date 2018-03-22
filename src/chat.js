@@ -22,7 +22,6 @@ class Chat extends Component {
     reply: '',
     friendReplies: friendReplies,
     chatUserItem: chatUserItem,
-    test: true,
   }
 
   constructor(props) {
@@ -59,12 +58,6 @@ class Chat extends Component {
     this.scrollToBottom()
   }
 
-  _handleFriendMsg = () => {
-    this.setState({
-      test: false,
-    })
-  }
-
   render() {
     return (
       <div className="chat-container">
@@ -82,7 +75,7 @@ class Chat extends Component {
                   onlineStatus={item.onlineStatus}
                   friendName={item.friendName}
                   friendLastMsg={item.friendLastMsg}
-                  openChat={false}
+                  openChat={num === 0 ? true : false}
                 />
               )}
             </div>

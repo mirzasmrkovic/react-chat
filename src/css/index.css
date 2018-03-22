@@ -10,6 +10,9 @@
 .align-self-flex-end {
   align-self: flex-end;
 }
+.cursor-pointer {
+  cursor: pointer;
+}
 body {
   margin: 0px;
   font-family: 'Lato', sans-serif;

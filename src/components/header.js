@@ -13,10 +13,9 @@ class Header extends Component {
           <img className='chat-logo' src='https://i.imgur.com/TindFVo.png'/>
         </div>
           <ul className='chat-nav flex-property'>
-            <ChatNavItem navItem='my home'/>
-            <ChatNavItem navItem='my portfolio'/>
-            <ChatNavItem navItem='marketplace'/>
-            <ChatNavItem navItem='help'/>
+            <ChatNavItem openChat={true} navItem='women'/>
+            <ChatNavItem navItem='men'/>
+            <ChatNavItem navItem='tra..'/>
           </ul>
         <div className='header-items flex-property align-items-center'>
           <div className='chat-msgs flex-property align-items-center'><i className="fa fa-envelope" aria-hidden="true"></i> <div className='msg-number flex-property align-items-center justify-content-center white title-xxs bold-title'>{this.state.msgNum}</div></div>
