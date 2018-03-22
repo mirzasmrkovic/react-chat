@@ -7,10 +7,10 @@ class ChatProfileContainer extends Component {
 
   render() {
     return (
-      <div className='chat-profile-container flex-1'>
+      <div className='chat-profile-container flex-property justify-content-center flex-1'>
         <ul className='chat-profile-nav flex-property'>
-          <li className='flex-property justify-content-center'>profile</li>
-          <li className='flex-property justify-content-center'>files</li>
+          <li className='flex-property justify-content-center align-items-center'>profile</li>
+          <li className='flex-property justify-content-center align-items-center'>files</li>
         </ul>
         <div className='chat-friend-container flex-property flex-direction-column align-items-center center-title'>
           <img src='https://i.imgur.com/WXXZkXp.png'/>

@@ -107,14 +107,8 @@ body {
 .chat-side-container {
   border: 1px solid #D5C5C8;
   border-top: none;
-}
-
-.chat-side-container:first-child {
+  max-width: 350px;
   border-left: none;
-}
-
-.chat-side-container:last-child {
-  border-right: none;
 }
 
 .msg-search-bar {
@@ -273,16 +267,24 @@ body {
 
 .chat-profile-container {
   padding: 20px;
+  border: 1px solid #D5C5C8;
+  border-top: none;
+  overflow-y: scroll;
+  max-width: 350px;
+  flex-wrap: wrap;
 }
 
 .chat-profile-nav {
   list-style: none;
+  width: 100%;
+  max-width: 300px;
+  max-height: 50px;
   text-transform: capitalize;
 }
 
 .chat-profile-nav li {
   width: 100%;
-  padding: 10px 0;
+  padding: 10px 0px;
   color: #D5C5C8;
   border-bottom: 1px solid #D5C5C8;
   transition: .1s linear;
