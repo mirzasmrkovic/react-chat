@@ -11,6 +11,7 @@ import Header from './components/header.js'
 import ChatUserItem from './components/chatUserItem.js'
 import ChatItem from './components/chatItem.js'
 import ChatProfileContainer from './components/chatProfileContainer.js'
+import OpenSideMenu from './components/openSideMenu.js'
 
 import ChatTextarea from './components/chatTextarea.js'
 
@@ -81,6 +82,8 @@ class Chat extends Component {
             </div>
           </div>
           <div className='chat-middle-container flex-property flex-direction-column flex-2'>
+            <OpenSideMenu side={true}/> {/*true = right*/}
+            <OpenSideMenu side={false}/> {/*false = left*/}
             <div ref={(el) => { this.chatTextContainer = el; }} className='chat-text-container'>
               {this.state.friendReplies.map((item, num) =>
                 <ChatItem
