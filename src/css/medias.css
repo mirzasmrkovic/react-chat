@@ -70,6 +70,16 @@
   .chat-text {
     max-width: 100%;
   }
+  .chat-nav {
+    font-size: .9em;
+  }
+  .chat-user-container img {
+    width: 25px;
+    height: 25px;
+  }
+  .chat-username {
+    font-size: .7em;
+  }
 }
 
 @media only screen and (max-width: 320px) {
