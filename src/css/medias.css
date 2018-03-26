@@ -11,21 +11,65 @@
 }
 
 @media only screen and (max-width: 991px) {
-
+  .chat-text {
+    max-width: 100%;
+    margin-right: 60px;
+  }
+  .chat-text{
+    font-size: .85em;
+  }
+  .chat-item-posted .chat-text{
+    margin-right: 0px;
+    margin-left: 60px;
+  }
+  .user-item-name {
+    font-size: 1em;
+  }
+  .user-item-last-msg {
+    font-size: .9em;
+  }
+  .chat-user-img-container img {
+    width: 40px;
+    height: 40px;
+  }
 }
 
 @media only screen and (max-width: 786px) {
   .chat-nav-item {
     font-size: .7em;
   }
+
+  .chat-text{
+    font-size: .75em;
+  }
+  .user-item-name {
+    font-size: .9em;
+  }
+  .user-item-last-msg {
+    font-size: .8em;
+  }
+  .chat-user-img-container img {
+    width: 35px;
+    height: 35px;
+  }
+  .chat-side-container {
+    display: none;
+  }
 }
 
 @media only screen and (max-width: 630px) {
-
+  .chat-profile-container {
+    display: none;
+  }
+  .chat-text {
+    max-width: 50vw;
+  }
 }
 
 @media only screen and (max-width: 480px) {
-
+  .chat-text {
+    max-width: 100%;
+  }
 }
 
 @media only screen and (max-width: 320px) {

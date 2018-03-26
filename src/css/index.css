@@ -109,6 +109,7 @@ body {
   border-top: none;
   max-width: 350px;
   border-left: none;
+  background-color: white;
 }
 
 .msg-search-bar {
@@ -178,10 +179,15 @@ body {
   position: absolute;
   top: 50%;
   padding: 10px;
-  background-color: #333;
+  background-color: #666;
   color: #fff;
   cursor: pointer;
   z-index: 2;
+  opacity: 0;
+}
+
+.open-side-menu:hover {
+  opacity: 1;
 }
 
 .open-left {

@@ -13,7 +13,7 @@ class OpenSideMenu extends Component {
 
   render(){
     return(
-      <div onClick={this._handleSide} className={'open-side-menu open-' + ((this.props.side && true) ? 'right' : 'left')}><i className={'fa fa-angle-double-' + ((this.state.side && true) ? 'right' : 'left')}></i></div>
+      <div onClick={this.props.toggleSideMenu} className={'open-side-menu open-' + ((this.props.side && true) ? 'right' : 'left')}><i className={'fa fa-angle-double-' + ((this.state.side && true) ? 'right' : 'left')}></i></div>
     )
   }
 }
