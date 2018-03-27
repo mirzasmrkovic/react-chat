@@ -102,6 +102,7 @@ body {
 
 .chat-content-container {
   height: 91.9vh;
+  position: relative;
 }
 
 .chat-side-container {
@@ -172,34 +173,26 @@ body {
 }
 
 .chat-middle-container {
-  position: relative;
 }
 
 .open-side-menu {
   position: absolute;
-  top: 50%;
+  top: 0;
   padding: 10px;
-  background-color: #666;
+  background-color: rgba(85,85,85,0.5);
   color: #fff;
   cursor: pointer;
-  z-index: 2;
-  opacity: 0;
-}
-
-.open-side-menu:hover {
-  opacity: 1;
+  z-index: 20;
+  width: 15px;
+  height: 15px;
 }
 
 .open-left {
   left: 0;
-  border-top-right-radius: 20px;
-  border-bottom-right-radius: 20px;
 }
 
 .open-right {
   right: 0;
-  border-top-left-radius: 20px;
-  border-bottom-left-radius: 20px;
 }
 
 .chat-text-container {
@@ -319,7 +312,7 @@ body {
   cursor: pointer;
 }
 
-.chat-profile-nav li:hover {
+.chat-profile-nav li:hover, .profile-nav-open {
   border-bottom: 1px solid #736B60;
   color: #736B60;
 }

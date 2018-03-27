@@ -52,8 +52,13 @@
     width: 35px;
     height: 35px;
   }
+  .chat-content-container {
+    position: relative;
+  }
   .chat-side-container {
-    display: none;
+    min-width: 200px;
+    z-index: 10;
+    position: absolute;
   }
 }
 
@@ -76,6 +81,16 @@
   .chat-user-container img {
     width: 25px;
     height: 25px;
+  }
+  .header-items {
+    margin-left: 5px;
+  }
+  .chat-user-container {
+    margin-right: 10px;
+  }
+  .chat-logo {
+    width: 20px;
+    height: 20px;
   }
   .chat-username {
     font-size: .7em;

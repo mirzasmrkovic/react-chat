@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 class ChatProfileContainer extends Component {
   state = {
     onlineStatus: this.props.onlineStatus && true ? 'chat-online' : 'chat-offline',
+    selected: false,
   }
 
   render() {

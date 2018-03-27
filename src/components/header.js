@@ -15,7 +15,7 @@ class Header extends Component {
           <ul className='chat-nav flex-property'>
             <ChatNavItem openChat={true} navItem='women'/>
             <ChatNavItem navItem='men'/>
-            <ChatNavItem navItem='tra..'/>
+            <ChatNavItem navItem='transexual'/>
           </ul>
         <div className='header-items flex-property align-items-center'>
           <div className='chat-msgs flex-property align-items-center'><i className="fa fa-envelope" aria-hidden="true"></i> <div className='msg-number flex-property align-items-center justify-content-center white title-xxs bold-title'>{this.state.msgNum}</div></div>

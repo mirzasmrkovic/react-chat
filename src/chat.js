@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import ReactDOM from 'react-dom'
 
 import './css/index.css'
@@ -24,6 +23,7 @@ class Chat extends Component {
     friendReplies: friendReplies,
     chatUserItem: chatUserItem,
     openSide: true,
+    openChat: 0,
   }
 
   constructor(props) {
@@ -40,7 +40,7 @@ class Chat extends Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    if (this.state.reply != '') {
+    if (this.state.reply !== '') {
       this.setState({
         reply: '',
         friendReplies: [...this.state.friendReplies, { chatFriendImg: "https://i.imgur.com/1ls2fTv.png", onlineStatus: false, userPosting: true, chatReply: this.state.reply}],
@@ -66,11 +66,20 @@ class Chat extends Component {
       openSide: !this.state.openSide,
     })
   }
+
+  _setActiveLink = (chatNum) => {
+    this.setState({
+      openChat: chatNum,
+    })
+  }
+
   render() {
     return (
       <div className="chat-container">
         <Header msgNum={150}/>
         <div className='chat-content-container flex-property flex-wrap-wrap'>
+          <OpenSideMenu toggleSideMenu={this.toggleSideMenu} side={false}/> {/*false = left*/}
+          <OpenSideMenu side={true}/> {/*true = right*/}
           {this.state.openSide && <div className='chat-side-container flex-1'>
             <div className='msg-search-bar flex-property justify-content-center align-items-center'>
               <input placeholder='Search messages'/>
@@ -78,19 +87,19 @@ class Chat extends Component {
             <div className='chat-msg-container'>
               {this.state.chatUserItem.map((item, num) =>
                 <ChatUserItem
+                  setActiveLink={this._setActiveLink}
                   key={num}
+                  itemNum={num}
                   chatFriendImg={item.chatFriendImg}
                   onlineStatus={item.onlineStatus}
                   friendName={item.friendName}
                   friendLastMsg={item.friendLastMsg}
-                  openChat={num === 0 ? true : false}
+                  openChat={this.state.openChat === num}
                 />
               )}
             </div>
           </div>}
             <div className='chat-middle-container flex-property flex-direction-column flex-2'>
-              <OpenSideMenu side={true}/> {/*true = right*/}
-              <OpenSideMenu toggleSideMenu={this.toggleSideMenu} side={false}/> {/*false = left*/}
               <div ref={(el) => { this.chatTextContainer = el; }} className='chat-text-container'>
                 {this.state.friendReplies.map((item, num) =>
                   <ChatItem
