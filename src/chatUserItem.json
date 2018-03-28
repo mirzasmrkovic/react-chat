@@ -4,31 +4,101 @@
       "chatFriendImg": "https://i.imgur.com/1ASbjkR.jpg",
       "onlineStatus": true,
       "friendName": "halid beslic",
-      "friendLastMsg": "Masiraj da dise."
+      "friendLastMsg": "Masiraj da dise.",
+			"chatReplies": [
+				{
+		      "userPosting": false,
+		      "chatReply": "da diseee! consectetur adipiscing elit. Vestibulum enim metus, sagittis at metus et, cursus vestibulum lacus. Duis quis varius sapien."
+				},
+				{
+		      "userPosting": false,
+		      "chatReply": "da diseee! consectetur adipiscing elit. Vestibulum enim metus, sagittis at metus et, cursus vestibulum lacus. Duis quis varius sapien."
+				},
+				{
+		      "userPosting": true,
+		      "chatReply": "cao cao"
+				}
+			]
 		},
     {
       "chatFriendImg": "https://i.imgur.com/1ASbjkR.jpg",
       "onlineStatus": true,
       "friendName": "hanka paludm",
-      "friendLastMsg": "Masiraj da dise."
+      "friendLastMsg": "Masiraj da dise.",
+			"chatReplies": [
+				{
+		      "userPosting": false,
+		      "chatReply": "da diseee! consectetur adipiscing elit. Vestibulum enim metus, sagittis at metus et, cursus vestibulum lacus. Duis quis varius sapien."
+				},
+				{
+		      "userPosting": false,
+		      "chatReply": "da diseee! consectetur adipiscing elit. Vestibulum enim metus, sagittis at metus et, cursus vestibulum lacus. Duis quis varius sapien."
+				},
+				{
+		      "userPosting": true,
+		      "chatReply": "sta ima"
+				}
+			]
 		},
     {
       "chatFriendImg": "https://i.imgur.com/1ls2fTv.png",
       "onlineStatus": false,
       "friendName": "Vladimir putin",
-      "friendLastMsg": "Masiraj da dise."
+      "friendLastMsg": "Masiraj da dise.",
+			"chatReplies": [
+				{
+		      "userPosting": false,
+		      "chatReply": "da diseee! consectetur adipiscing elit. Vestibulum enim metus, sagittis at metus et, cursus vestibulum lacus. Duis quis varius sapien."
+				},
+				{
+		      "userPosting": false,
+		      "chatReply": "da diseee! consectetur adipiscing elit. Vestibulum enim metus, sagittis at metus et, cursus vestibulum lacus. Duis quis varius sapien."
+				},
+				{
+		      "userPosting": true,
+		      "chatReply": "vozdra"
+				}
+			]
 		},
     {
       "chatFriendImg": "https://i.imgur.com/1ASbjkR.jpg",
       "onlineStatus": true,
       "friendName": "halid beslic",
-      "friendLastMsg": "Masiraj da dise."
+      "friendLastMsg": "Masiraj da dise.",
+			"chatReplies": [
+				{
+		      "userPosting": false,
+		      "chatReply": "da diseee! consectetur adipiscing elit. Vestibulum enim metus, sagittis at metus et, cursus vestibulum lacus. Duis quis varius sapien."
+				},
+				{
+		      "userPosting": false,
+		      "chatReply": "da diseee! consectetur adipiscing elit. Vestibulum enim metus, sagittis at metus et, cursus vestibulum lacus. Duis quis varius sapien."
+				},
+				{
+		      "userPosting": true,
+		      "chatReply": "kako si"
+				}
+			]
 		},
     {
       "chatFriendImg": "https://i.imgur.com/1ls2fTv.png",
       "onlineStatus": true,
       "friendName": "halid beslic",
-      "friendLastMsg": "Masiraj da dise."
+      "friendLastMsg": "Masiraj da dise.",
+			"chatReplies": [
+				{
+		      "userPosting": false,
+		      "chatReply": "da diseee! consectetur adipiscing elit. Vestibulum enim metus, sagittis at metus et, cursus vestibulum lacus. Duis quis varius sapien."
+				},
+				{
+		      "userPosting": false,
+		      "chatReply": "da diseee! consectetur adipiscing elit. Vestibulum enim metus, sagittis at metus et, cursus vestibulum lacus. Duis quis varius sapien."
+				},
+				{
+		      "userPosting": true,
+		      "chatReply": "kako kuci"
+				}
+			]
 		}
 	]
 }

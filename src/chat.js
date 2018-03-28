@@ -101,14 +101,14 @@ class Chat extends Component {
           </div>}
             <div className='chat-middle-container flex-property flex-direction-column flex-2'>
               <div ref={(el) => { this.chatTextContainer = el; }} className='chat-text-container'>
-                {this.state.friendReplies.map((item, num) =>
+                {this.state.chatUserItem[this.state.openChat].chatReplies.map((item, num) =>
                   <ChatItem
                     comments={this.state.friendReplies}
                     value={this.state.reply}
                     handleChange={this.handleChange}
                     handleSubmit={this.handleSubmit}
-                    chatFriendImg={item.chatFriendImg}
-                    onlineStatus={item.onlineStatus}
+                    chatFriendImg={this.state.chatUserItem[this.state.openChat].chatFriendImg}
+                    onlineStatus={this.state.chatUserItem[this.state.openChat].onlineStatus}
                     userPosting={item.userPosting}
                     chatReply={item.chatReply}
                   />
