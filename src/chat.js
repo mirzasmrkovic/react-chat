@@ -111,6 +111,7 @@ class Chat extends Component {
                   onlineStatus={item.onlineStatus}
                   friendName={item.friendName}
                   friendLastMsg={item.chatReplies[item.chatReplies.length-1].chatReply}
+                  userPosting={item.chatReplies[item.chatReplies.length-1].userPosting}
                   openChat={this.state.openChat === num}
                 />
               )}
@@ -132,9 +133,10 @@ class Chat extends Component {
               <ChatTextarea value={this.state.reply} handleChange={this.handleChange} handleSubmit={this.handleSubmit} />
             </div>
             <ChatProfileContainer
-              chatFriendName='robbie timms'
-              friendEmail='robbietimmms@gmail.com'
-              friendAge='26 years old'
+              chatFriendImg={this.state.chatUserItem[this.state.openChat].chatFriendImg}
+              chatFriendName={this.state.chatUserItem[this.state.openChat].friendName}
+              friendEmail={this.state.chatUserItem[this.state.openChat].friendEmail}
+              friendAge={this.state.chatUserItem[this.state.openChat].userAge}
             />
         </div>
       </div>

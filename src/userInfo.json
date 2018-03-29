@@ -2,6 +2,8 @@
 	"userInfo": {
       "username": "bob marley",
       "userImg": "https://i.imgur.com/LMAuull.jpg",
-      "onlineStatus": true
+      "onlineStatus": true,
+			"userEmail": "bob.marely@gmail.com",
+			"userAge": 36
 	}
 }

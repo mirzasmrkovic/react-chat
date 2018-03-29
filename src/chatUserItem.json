@@ -4,7 +4,6 @@
       "chatFriendImg": "https://i.imgur.com/1ASbjkR.jpg",
       "onlineStatus": true,
       "friendName": "halid beslic",
-      "friendLastMsg": "Masiraj da dise.",
 			"chatReplies": [
 				{
 		      "userPosting": false,
@@ -18,13 +17,14 @@
 		      "userPosting": true,
 		      "chatReply": "cao cao"
 				}
-			]
+			],
+			"friendEmail": "halid.beslic@gmail.com",
+			"userAge": 65
 		},
     {
       "chatFriendImg": "https://i.imgur.com/1ASbjkR.jpg",
       "onlineStatus": true,
       "friendName": "hanka paludm",
-      "friendLastMsg": "Masiraj da dise.",
 			"chatReplies": [
 				{
 		      "userPosting": false,
@@ -39,16 +39,17 @@
 		      "chatReply": "sta ima"
 				},
 				{
-		      "userPosting": true,
+		      "userPosting": false,
 		      "chatReply": "cao cao"
 				}
-			]
+			],
+			"friendEmail": "hanka.paludm@gmail.com",
+			"userAge": 55
 		},
     {
       "chatFriendImg": "https://i.imgur.com/1ls2fTv.png",
       "onlineStatus": false,
       "friendName": "Vladimir putin",
-      "friendLastMsg": "Masiraj da dise.",
 			"chatReplies": [
 				{
 		      "userPosting": false,
@@ -59,16 +60,17 @@
 		      "chatReply": "da diseee! consectetur adipiscing elit. Vestibulum enim metus, sagittis at metus et, cursus vestibulum lacus. Duis quis varius sapien."
 				},
 				{
-		      "userPosting": true,
+		      "userPosting": false,
 		      "chatReply": "vozdra"
 				}
-			]
+			],
+			"friendEmail": "vladimir.putin@gmail.com",
+			"userAge": 66
 		},
     {
       "chatFriendImg": "https://i.imgur.com/1ASbjkR.jpg",
       "onlineStatus": true,
       "friendName": "halid beslic",
-      "friendLastMsg": "Masiraj da dise.",
 			"chatReplies": [
 				{
 		      "userPosting": false,
@@ -82,13 +84,14 @@
 		      "userPosting": true,
 		      "chatReply": "kako si"
 				}
-			]
+			],
+			"friendEmail": "halid.beslic@gmail.com",
+			"userAge": 26
 		},
     {
-      "chatFriendImg": "https://i.imgur.com/1ls2fTv.png",
+      "chatFriendImg": "https://i.imgur.com/WXXZkXp.png",
       "onlineStatus": true,
-      "friendName": "halid beslic",
-      "friendLastMsg": "Masiraj da dise.",
+      "friendName": "alexandra daddario",
 			"chatReplies": [
 				{
 		      "userPosting": false,
@@ -99,10 +102,12 @@
 		      "chatReply": "da diseee! consectetur adipiscing elit. Vestibulum enim metus, sagittis at metus et, cursus vestibulum lacus. Duis quis varius sapien."
 				},
 				{
-		      "userPosting": true,
+		      "userPosting": false,
 		      "chatReply": "kako kuci"
 				}
-			]
+			],
+			"friendEmail": "alex.dadd@gmail.com",
+			"userAge": 26
 		}
 	]
 }

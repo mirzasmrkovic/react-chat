@@ -14,7 +14,7 @@ class ChatUserItem extends Component {
         </div>
         <div className='user-item-text-container margin-left-10'>
           <div className='user-item-name title-l thin-title'>{this.props.friendName}</div>
-          <div className='user-item-last-msg'>{this.props.friendLastMsg}</div>
+          <div className='user-item-last-msg'>{(this.props.userPosting && true ? 'You: ' : '') + this.props.friendLastMsg}</div>
         </div>
       </div>
     )
