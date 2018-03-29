@@ -15,13 +15,13 @@ import OpenSideMenu from './components/openSideMenu.js'
 import ChatTextarea from './components/chatTextarea.js'
 
 import {chatUserItem} from './chatUserItem.json'
-import {friendReplies} from './friendReplies.json'
+import {userInfo} from './userInfo.json'
 
 class Chat extends Component {
   state = {
     reply: '',
-    friendReplies: friendReplies,
     chatUserItem: chatUserItem,
+    userInfo: userInfo,
     openSide: true,
     openChat: 0,
   }
@@ -38,12 +38,25 @@ class Chat extends Component {
     this.setState({reply: event.target.value});
   }
 
+
   handleSubmit(event) {
+    const modifiedChatUserItem = {
+      ...this.state.chatUserItem[this.state.openChat],
+      chatReplies: [
+        ...this.state.chatUserItem[this.state.openChat].chatReplies,
+        { userPosting: true, chatReply: this.state.reply }
+      ]
+    }
     event.preventDefault();
     if (this.state.reply !== '') {
       this.setState({
         reply: '',
-        friendReplies: [...this.state.friendReplies, { chatFriendImg: "https://i.imgur.com/1ls2fTv.png", onlineStatus: false, userPosting: true, chatReply: this.state.reply}],
+        chatUserItem: this.state.chatUserItem.map((item, num) => {
+          if (num === this.state.openChat) {
+            return modifiedChatUserItem
+          }
+          return item
+        })
       })
     }
   }
@@ -76,10 +89,14 @@ class Chat extends Component {
   render() {
     return (
       <div className="chat-container">
-        <Header msgNum={150}/>
+        <Header
+          username={userInfo.username}
+          userImg={userInfo.userImg}
+          msgNum={150}
+        />
         <div className='chat-content-container flex-property flex-wrap-wrap'>
           <OpenSideMenu toggleSideMenu={this.toggleSideMenu} side={false}/> {/*false = left*/}
-          <OpenSideMenu side={true}/> {/*true = right*/}
+          <OpenSideMenu toggleSideMenu={this.toggleSideMenu} side={true}/> {/*true = right*/}
           {this.state.openSide && <div className='chat-side-container flex-1'>
             <div className='msg-search-bar flex-property justify-content-center align-items-center'>
               <input placeholder='Search messages'/>
@@ -93,7 +110,7 @@ class Chat extends Component {
                   chatFriendImg={item.chatFriendImg}
                   onlineStatus={item.onlineStatus}
                   friendName={item.friendName}
-                  friendLastMsg={item.friendLastMsg}
+                  friendLastMsg={item.chatReplies[item.chatReplies.length-1].chatReply}
                   openChat={this.state.openChat === num}
                 />
               )}
@@ -103,14 +120,12 @@ class Chat extends Component {
               <div ref={(el) => { this.chatTextContainer = el; }} className='chat-text-container'>
                 {this.state.chatUserItem[this.state.openChat].chatReplies.map((item, num) =>
                   <ChatItem
-                    comments={this.state.friendReplies}
-                    value={this.state.reply}
-                    handleChange={this.handleChange}
-                    handleSubmit={this.handleSubmit}
                     chatFriendImg={this.state.chatUserItem[this.state.openChat].chatFriendImg}
                     onlineStatus={this.state.chatUserItem[this.state.openChat].onlineStatus}
                     userPosting={item.userPosting}
                     chatReply={item.chatReply}
+                    username={userInfo.username}
+                    userImg={userInfo.userImg}
                   />
                 )}
               </div>

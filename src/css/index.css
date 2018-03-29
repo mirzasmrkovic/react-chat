@@ -90,7 +90,7 @@ body {
 }
 
 .chat-username {
-
+  text-transform: capitalize;
 }
 
 .chat-user-container img{
