@@ -3,15 +3,24 @@ import React, { Component } from 'react';
 class ChatProfileContainer extends Component {
   state = {
     onlineStatus: this.props.onlineStatus && true ? 'chat-online' : 'chat-offline',
+    navItems: ['profile', 'files'],
     selected: false,
+    openChat: 0,
+  }
+
+  _handleNav = (num) => {
+    this.setState({
+      openChat: num,
+    })
   }
 
   render() {
     return (
       <div className='chat-profile-container flex-property justify-content-center flex-1'>
         <ul className='chat-profile-nav flex-property'>
-          <li className='flex-property justify-content-center align-items-center'>profile</li>
-          <li className='flex-property justify-content-center align-items-center'>files</li>
+          {this.state.navItems.map((item,num) =>
+            <li onClick={() => this._handleNav(num)} className={(this.state.openChat === num ? 'profile-nav-open' : 'profile-nav') + ' flex-property justify-content-center align-items-center'}>{item}</li>
+          )}
         </ul>
         <div className='chat-friend-container flex-property flex-direction-column align-items-center center-title'>
           <img src={this.props.chatFriendImg}/>

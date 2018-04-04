@@ -201,13 +201,13 @@ body {
   overflow-y: scroll;
 }
 
-.chat-item {
+.chat-item, .chat-item-posted {
   margin: 20px 0px;
+  align-items: flex-start;
 }
 
 .chat-item-posted {
   flex-direction: row-reverse;
-  margin: 20px 0px 10px;
 }
 
 .chat-item-posted .chat-text{
@@ -303,7 +303,7 @@ body {
   text-transform: capitalize;
 }
 
-.chat-profile-nav li {
+.profile-nav, .profile-nav-open {
   width: 100%;
   padding: 10px 0px;
   color: #D5C5C8;
@@ -312,7 +312,7 @@ body {
   cursor: pointer;
 }
 
-.chat-profile-nav li:hover, .profile-nav-open {
+.profile-nav-open, .profile-nav:hover {
   border-bottom: 1px solid #736B60;
   color: #736B60;
 }

@@ -1,9 +1,19 @@
 import React, { Component } from 'react';
 import ChatNavItem from './chatNavItem.js'
 
+
 class Header extends Component {
   state = {
     msgNum: (this.props.msgNum) < 100 ? (this.props.msgNum) : 99 + '+',
+    navItems: ['women', 'men', 'transexual'],
+    openChat: 0,
+  }
+
+
+  _setActiveLink = (chatNum) => {
+    this.setState({
+      openChat: chatNum,
+    })
   }
 
   render(){
@@ -13,9 +23,15 @@ class Header extends Component {
           <img className='chat-logo' src='https://i.imgur.com/TindFVo.png'/>
         </div>
           <ul className='chat-nav flex-property'>
-            <ChatNavItem openChat={true} navItem='women'/>
-            <ChatNavItem navItem='men'/>
-            <ChatNavItem navItem='transexual'/>
+            {this.state.navItems.map((item, num) =>
+              <ChatNavItem
+                setActiveLink={this._setActiveLink}
+                key={num}
+                itemNum={num}
+                openChat={this.state.openChat === num}
+                navItem={item}
+              />
+            )}
           </ul>
         <div className='header-items flex-property align-items-center'>
           <div className='chat-msgs flex-property align-items-center'><i className="fa fa-envelope" aria-hidden="true"></i> <div className='msg-number flex-property align-items-center justify-content-center white title-xxs bold-title'>{this.state.msgNum}</div></div>

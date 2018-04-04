@@ -7,7 +7,7 @@ class ChatUserItem extends Component {
 
   render() {
     return (
-      <div onClick={() => this.props.setActiveLink(this.props.itemNum)} key={this.props.itemNum} className={(this.props.openChat && true ? 'chat-user-item-open' : '') + ' chat-user-item flex-property align-items-center'}>
+      <div onClick={() => this.props.setActiveLink(this.props.itemNum)} className={(this.props.openChat && true ? 'chat-user-item-open' : '') + ' chat-user-item flex-property align-items-center'}>
         <div className='chat-user-img-container'>
           <img src={this.props.chatFriendImg}/>
           <div className={(this.state.onlineStatus && true ? 'chat-online' : 'chat-offline') + ' chat-online-status'}></div>
