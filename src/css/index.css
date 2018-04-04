@@ -358,6 +358,20 @@ body {
   background-color: #999;
 }
 
+.sent-imgs-container {
+
+}
+
+.sent-imgs-container img {
+  max-width: 100px;
+  width: calc(33% - 10px);
+  margin: 5px;
+  height: ;
+  object-fit: cover;
+}
+
+
+
 
 
 

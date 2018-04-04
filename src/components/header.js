@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import ChatNavItem from './chatNavItem.js'
 
+let navItems = ['women', 'men', 'transexual']
 
 class Header extends Component {
   state = {
     msgNum: (this.props.msgNum) < 100 ? (this.props.msgNum) : 99 + '+',
-    navItems: ['women', 'men', 'transexual'],
     openChat: 0,
   }
 
@@ -23,7 +23,7 @@ class Header extends Component {
           <img className='chat-logo' src='https://i.imgur.com/TindFVo.png'/>
         </div>
           <ul className='chat-nav flex-property'>
-            {this.state.navItems.map((item, num) =>
+            {navItems.map((item, num) =>
               <ChatNavItem
                 setActiveLink={this._setActiveLink}
                 key={num}

@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 
+let navItems = ['profile', 'files']
+
 class ChatProfileContainer extends Component {
   state = {
     onlineStatus: this.props.onlineStatus && true ? 'chat-online' : 'chat-offline',
-    navItems: ['profile', 'files'],
     selected: false,
     openChat: 0,
   }
@@ -18,7 +19,7 @@ class ChatProfileContainer extends Component {
     return (
       <div className='chat-profile-container flex-property justify-content-center flex-1'>
         <ul className='chat-profile-nav flex-property'>
-          {this.state.navItems.map((item,num) =>
+          {navItems.map((item,num) =>
             <li onClick={() => this._handleNav(num)} className={(this.state.openChat === num ? 'profile-nav-open' : 'profile-nav') + ' flex-property justify-content-center align-items-center'}>{item}</li>
           )}
         </ul>

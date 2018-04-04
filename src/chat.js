@@ -22,7 +22,8 @@ class Chat extends Component {
     reply: '',
     chatUserItem: chatUserItem,
     userInfo: userInfo,
-    openSide: true,
+    openLeftSide: true,
+    openRightSide: true,
     openChat: 0,
   }
 
@@ -74,10 +75,17 @@ class Chat extends Component {
     this.scrollToBottom()
   }
 
-  toggleSideMenu = () => {
-    this.setState({
-      openSide: !this.state.openSide,
-    })
+  toggleSideMenu = (side) => {
+    if (side) {
+      this.setState({
+        openRightSide: !this.state.openRightSide,
+      })
+    }
+    else {
+      this.setState({
+        openLeftSide: !this.state.openLeftSide,
+      })
+    }
   }
 
   _setActiveLink = (chatNum) => {
@@ -97,7 +105,7 @@ class Chat extends Component {
         <div className='chat-content-container flex-property flex-wrap-wrap'>
           <OpenSideMenu toggleSideMenu={this.toggleSideMenu} side={false}/> {/*false = left*/}
           <OpenSideMenu toggleSideMenu={this.toggleSideMenu} side={true}/> {/*true = right*/}
-          {this.state.openSide && <div className='chat-side-container flex-1'>
+          {this.state.openLeftSide && <div className='chat-side-container flex-1'>
             <div className='msg-search-bar flex-property justify-content-center align-items-center'>
               <input placeholder='Search messages'/>
             </div>
@@ -132,12 +140,12 @@ class Chat extends Component {
               </div>
               <ChatTextarea value={this.state.reply} handleChange={this.handleChange} handleSubmit={this.handleSubmit} />
             </div>
-            <ChatProfileContainer
+            {this.state.openRightSide && <ChatProfileContainer
               chatFriendImg={this.state.chatUserItem[this.state.openChat].chatFriendImg}
               chatFriendName={this.state.chatUserItem[this.state.openChat].friendName}
               friendEmail={this.state.chatUserItem[this.state.openChat].friendEmail}
               friendAge={this.state.chatUserItem[this.state.openChat].userAge}
-            />
+            />}
         </div>
       </div>
     );
