@@ -92,6 +92,11 @@ class Chat extends Component {
     this.setState({
       openChat: chatNum,
     })
+    if (this.state.openChat != chatNum) {
+      this.setState({
+        reply: '',
+      })
+    }
   }
 
   render() {
