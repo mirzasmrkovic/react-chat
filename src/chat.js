@@ -67,12 +67,8 @@ class Chat extends Component {
     chatTextContainer.scrollTop = chatTextContainer.scrollHeight;
   }
 
-  componentDidMount() {
-    this.scrollToBottom()
-  }
-
-  componentDidUpdate() {
-    this.scrollToBottom()
+  _focusInput = () => {
+    document.getElementById('chat-textarea').focus()
   }
 
   toggleSideMenu = (side) => {
@@ -97,6 +93,16 @@ class Chat extends Component {
         reply: '',
       })
     }
+  }
+
+  componentDidMount() {
+    this.scrollToBottom()
+    this._focusInput()
+  }
+
+  componentDidUpdate() {
+    this.scrollToBottom()
+    this._focusInput()
   }
 
   render() {

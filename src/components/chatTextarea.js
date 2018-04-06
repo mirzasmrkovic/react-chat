@@ -13,19 +13,33 @@ class ChatTextarea extends Component {
     })
   }
 
+  handleClickOutside = (e) => {
+    if ((this.state.openPopup === true) && (e.target.className !== 'chat-icon-item')) {
+      this._handlePopup()
+    }
+  }
+
+  componentDidMount() {
+    document.addEventListener('mousedown', this.handleClickOutside)
+  }
+
+  componentWillUnmount() {
+    document.removeEventListener('mousedown', this.handleClickOutside)
+  }
+
   render(){
     return(
       <div className='chat-textarea-container'>
         <form onKeyDown={(e) => (e.key === 'Enter' ? this.props.handleSubmit(e) : '')} className='flex-property' onSubmit={this.props.handleSubmit}>
-          <textarea className='font-lato title-s' row='2' type="text" value={this.props.value} onChange={this.props.handleChange} placeholder='write a reply'/>
+          <textarea id='chat-textarea' className='font-lato title-s' row='2' type="text" value={this.props.value} onChange={this.props.handleChange} placeholder='write a reply'/>
           <input type="submit" value="Submit" />
         </form>
         <div className='chat-icon-container flex-property'>
           <div className='chat-icon-item'><i className="fa fa-bold"></i></div>
           <div className='chat-icon-item'><i className="fa fa-italic"></i></div>
           <div className='chat-icon-item'><i className="fa fa-underline"></i></div>
-          <div className='chat-icon-item'>
-            <i onClick={this._handlePopup} className="fa fa-image"></i>
+          <div onClick={this._handlePopup} className='chat-icon-item'>
+            <i className="fa fa-image"></i>
             {this.state.openPopup && <div className='chat-icon-item-popup flex-property align-items-center justify-content-center'>
               <div className='chat-icon-popup-title title-xs'>Upload image</div>
               <div>

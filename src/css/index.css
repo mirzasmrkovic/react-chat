@@ -292,6 +292,14 @@ body {
   position: relative;
 }
 
+.chat-icon-item .fa {
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
 .chat-icon-item-popup {
   position: absolute;
   bottom: 100%;
