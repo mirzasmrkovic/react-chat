@@ -292,7 +292,7 @@ body {
   position: relative;
 }
 
-.chat-icon-item .fa {
+.popup-img {
   position: absolute;
   z-index: -1;
   top: 0;

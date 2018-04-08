@@ -35,12 +35,12 @@ class ChatTextarea extends Component {
           <input type="submit" value="Submit" />
         </form>
         <div className='chat-icon-container flex-property'>
-          <div className='chat-icon-item'><i className="fa fa-bold"></i></div>
-          <div className='chat-icon-item'><i className="fa fa-italic"></i></div>
-          <div className='chat-icon-item'><i className="fa fa-underline"></i></div>
+          <div className='chat-icon-item'><i className="popup-img fa fa-bold"></i></div>
+          <div className='chat-icon-item'><i className="popup-img fa fa-italic"></i></div>
+          <div className='chat-icon-item'><i className="popup-img fa fa-underline"></i></div>
           <div onClick={this._handlePopup} className='chat-icon-item'>
-            <i className="fa fa-image"></i>
-            {this.state.openPopup && <div className='chat-icon-item-popup flex-property align-items-center justify-content-center'>
+            <i className="popup-img fa fa-image"></i>
+            {this.state.openPopup && <div className='chat-icon-item-popup flex-property justify-content-center'>
               <div className='chat-icon-popup-title title-xs'>Upload image</div>
               <div>
                 <i className="fa fa-upload"></i>
