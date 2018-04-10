@@ -1,0 +1,91 @@
+{
+	"groupChat": [
+		{
+      "groupChatType": "women",
+      "groupItems": [
+        {
+          "chatUserImg": "https://i.imgur.com/1ASbjkR.jpg",
+          "onlineStatus": true,
+          "chatUsername": "Sonia Mort",
+          "chatUserMsg": "1women Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam cursus pulvinar dolor."
+        },
+        {
+          "chatUserImg": "https://i.imgur.com/1ls2fTv.png",
+          "onlineStatus": false,
+          "chatUsername": "Delicia Callie",
+          "chatUserMsg": "2women Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam cursus pulvinar dolor."
+        },
+        {
+          "chatUserImg": "https://i.imgur.com/1ASbjkR.jpg",
+          "onlineStatus": true,
+          "chatUsername": "Bob Marley",
+          "chatUserMsg": "3women Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam cursus pulvinar dolor."
+        },
+        {
+          "chatUserImg": "https://i.imgur.com/1ASbjkR.jpg",
+          "onlineStatus": true,
+          "chatUsername": "Sonia Mort",
+          "chatUserMsg": "4women Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam cursus pulvinar dolor."
+        }
+      ]
+		},
+    {
+      "groupChatType": "men",
+      "groupItems": [
+        {
+          "chatUserImg": "https://i.imgur.com/1ASbjkR.jpg",
+          "onlineStatus": true,
+          "chatUsername": "Sonia Mort",
+          "chatUserMsg": "men Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam cursus pulvinar dolor."
+        },
+        {
+          "chatUserImg": "https://i.imgur.com/1ASbjkR.jpg",
+          "onlineStatus": false,
+          "chatUsername": "Delicia Callie",
+          "chatUserMsg": "men Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam cursus pulvinar dolor."
+        },
+        {
+          "chatUserImg": "https://i.imgur.com/1ASbjkR.jpg",
+          "onlineStatus": true,
+          "chatUsername": "Bob Marley",
+          "chatUserMsg": "men Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam cursus pulvinar dolor."
+        },
+        {
+          "chatUserImg": "https://i.imgur.com/1ls2fTv.png",
+          "onlineStatus": false,
+          "chatUsername": "Sonia Mort",
+          "chatUserMsg": "men Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam cursus pulvinar dolor."
+        }
+      ]
+		},
+    {
+      "groupChatType": "transexual",
+      "groupItems": [
+        {
+          "chatUserImg": "https://i.imgur.com/1ASbjkR.jpg",
+          "onlineStatus": true,
+          "chatUsername": "Sonia Mort",
+          "chatUserMsg": "trans Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam cursus pulvinar dolor."
+        },
+        {
+          "chatUserImg": "https://i.imgur.com/WXXZkXp.png",
+          "onlineStatus": false,
+          "chatUsername": "Delicia Callie",
+          "chatUserMsg": "trans Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam cursus pulvinar dolor."
+        },
+        {
+          "chatUserImg": "https://i.imgur.com/1ASbjkR.jpg",
+          "onlineStatus": true,
+          "chatUsername": "Bob Marley",
+          "chatUserMsg": "trans Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam cursus pulvinar dolor."
+        },
+        {
+          "chatUserImg": "https://i.imgur.com/1ASbjkR.jpg",
+          "onlineStatus": true,
+          "chatUsername": "Sonia Mort",
+          "chatUserMsg": "trans Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam cursus pulvinar dolor."
+        }
+      ]
+		}
+	]
+}

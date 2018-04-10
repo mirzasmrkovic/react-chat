@@ -48,7 +48,7 @@ class ChatTextarea extends Component {
               </div>
             </div>}
           </div>
-          <div className='chat-icon-item'><i className="fa fa-smile-o"></i></div>
+          <div className='chat-icon-item'><i className="popup-img fa fa-smile-o"></i></div>
         </div>
       </div>
     )

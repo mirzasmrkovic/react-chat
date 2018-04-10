@@ -6,17 +6,17 @@ let navItems = ['women', 'men', 'transexual']
 class Header extends Component {
   state = {
     msgNum: (this.props.msgNum) < 100 ? (this.props.msgNum) : 99 + '+',
-    openChat: 0,
+    openChat: -1,
   }
 
-
-  _setActiveLink = (chatNum) => {
+  _setActiveLink = (item, chatNum) => {
     this.setState({
       openChat: chatNum,
     })
   }
 
   render(){
+    console.log(this.props.openGroupChat)
     return(
       <div className='chat-header flex-property justify-content-between align-items-center'>
         <div className='header-items flex-property margin-left-20'>
@@ -27,9 +27,11 @@ class Header extends Component {
               <ChatNavItem
                 setActiveLink={this._setActiveLink}
                 key={num}
+                item={item}
                 itemNum={num}
-                openChat={this.state.openChat === num}
+                openChat={this.props.openGroupChat ? this.state.openChat === num : false}
                 navItem={item}
+                handleHeaderClick={this.props.handleHeaderClick}
               />
             )}
           </ul>
