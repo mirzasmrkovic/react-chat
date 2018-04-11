@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 class ChatNavItem extends Component {
   _handleClick (item, itemNum, e) {
     this.props.setActiveLink(item, itemNum)
-    this.props.handleHeaderClick(e)
+    this.props.handleHeaderClick(e, itemNum)
   }
 
   render(){

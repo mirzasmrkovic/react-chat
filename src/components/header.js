@@ -16,7 +16,6 @@ class Header extends Component {
   }
 
   render(){
-    console.log(this.props.openGroupChat)
     return(
       <div className='chat-header flex-property justify-content-between align-items-center'>
         <div className='header-items flex-property margin-left-20'>

@@ -24,10 +24,11 @@ class Chat extends Component {
     chatUserItem: chatUserItem,
     userInfo: userInfo,
     groupChat: groupChat,
-    openGroupChat: false,
-    groupChatClicked: '',
     openLeftSide: true,
     openRightSide: true,
+    openGroupChat: false,
+    groupChatClicked: '',
+    groupChatOpened: -1,
     openChat: 0,
   }
 
@@ -45,24 +46,48 @@ class Chat extends Component {
 
 
   handleSubmit(event) {
-    const modifiedChatUserItem = {
-      ...this.state.chatUserItem[this.state.openChat],
-      chatReplies: [
-        ...this.state.chatUserItem[this.state.openChat].chatReplies,
-        { userPosting: true, chatReply: this.state.reply }
-      ]
-    }
     event.preventDefault();
-    if (this.state.reply !== '') {
-      this.setState({
-        reply: '',
-        chatUserItem: this.state.chatUserItem.map((item, num) => {
-          if (num === this.state.openChat) {
-            return modifiedChatUserItem
-          }
-          return item
+    if (!this.state.openGroupChat) {
+      const modifiedChatUserItem = {
+        ...this.state.chatUserItem[this.state.openChat],
+        chatReplies: [
+          ...this.state.chatUserItem[this.state.openChat].chatReplies,
+          { userPosting: true, chatReply: this.state.reply }
+        ]
+      }
+      if (this.state.reply !== '') {
+        this.setState({
+          reply: '',
+          chatUserItem: this.state.chatUserItem.map((item, num) => {
+            if (num === this.state.openChat) {
+              return modifiedChatUserItem
+            }
+            return item
+          })
         })
-      })
+      }
+    }
+    else {
+      if (this.state.reply !== '') {
+        const modifiedChatUserItem = {
+          ...this.state.groupChat[this.state.groupChatOpened],
+          groupItems: [
+            ...this.state.groupChat[this.state.groupChatOpened].groupItems,
+            {chatUserImg: this.state.userInfo.userImg, onlineStatus: true, chatUsername: this.state.userInfo.username, chatUserMsg: this.state.reply}
+          ]
+        }
+        if (this.state.reply !== '') {
+          this.setState({
+            reply: '',
+            groupChat: this.state.groupChat.map((item, num) => {
+              if (num === this.state.groupChatOpened) {
+                return modifiedChatUserItem
+              }
+              return item
+            })
+          })
+        }
+      }
     }
   }
 
@@ -101,11 +126,12 @@ class Chat extends Component {
     }
   }
 
-  _handleHeaderClick = (e) => {
+  _handleHeaderClick = (e, itemNum) => {
     this.setState({
       openGroupChat: true,
       groupChatClicked: e.target.textContent,
       openChat: -1,
+      groupChatOpened: itemNum,
     })
   }
 
