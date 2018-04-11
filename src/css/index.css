@@ -137,6 +137,22 @@ body {
   overflow-y: scroll;
 }
 
+.chat-group-btn-container {
+
+}
+
+.chat-group-btn {
+  width: 40px;
+  height: 40px;
+  border: 1px solid #999;
+  transition: .1s linear;
+}
+
+.chat-group-btn-open, .chat-group-btn:hover {
+  color: white;
+  background-color: #333;
+}
+
 .chat-user-item {
   padding: 10px 0 10px 5px;
   transition: .1s linear;

@@ -11,6 +11,7 @@ import ChatUserItem from './components/chatUserItem.js'
 import ChatItem from './components/chatItem.js'
 import ChatProfileContainer from './components/chatProfileContainer.js'
 import OpenSideMenu from './components/openSideMenu.js'
+import GroupBtnContainer from './components/groupBtnContainer.js'
 
 import ChatTextarea from './components/chatTextarea.js'
 
@@ -163,6 +164,9 @@ class Chat extends Component {
               <input placeholder='Search messages'/>
             </div>
             <div className='chat-msg-container'>
+              <GroupBtnContainer
+
+              />
               {this.state.chatUserItem.map((item, num) =>
                 <ChatUserItem
                   setActiveLink={this._setActiveLink}
