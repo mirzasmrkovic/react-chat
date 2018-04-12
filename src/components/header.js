@@ -6,13 +6,6 @@ let navItems = ['women', 'men', 'transexual']
 class Header extends Component {
   state = {
     msgNum: (this.props.msgNum) < 100 ? (this.props.msgNum) : 99 + '+',
-    openChat: -1,
-  }
-
-  _setActiveLink = (item, chatNum) => {
-    this.setState({
-      openChat: chatNum,
-    })
   }
 
   render(){
@@ -21,18 +14,8 @@ class Header extends Component {
         <div className='header-items flex-property margin-left-20'>
           <img className='chat-logo' src='https://i.imgur.com/TindFVo.png'/>
         </div>
-          <ul className='chat-nav flex-property'>
-            {navItems.map((item, num) =>
-              <ChatNavItem
-                setActiveLink={this._setActiveLink}
-                key={num}
-                item={item}
-                itemNum={num}
-                openChat={this.props.openGroupChat ? this.state.openChat === num : false}
-                navItem={item}
-                handleHeaderClick={this.props.handleHeaderClick}
-              />
-            )}
+          <ul className='chat-nav flex-property align-items-center'>
+            placeholder
           </ul>
         <div className='header-items flex-property align-items-center'>
           <div className='chat-msgs flex-property align-items-center'><i className="fa fa-envelope" aria-hidden="true"></i> <div className='msg-number flex-property align-items-center justify-content-center white title-xxs bold-title'>{this.state.msgNum}</div></div>
@@ -47,3 +30,15 @@ class Header extends Component {
 }
 
 export default Header;
+
+// {navItems.map((item, num) =>
+//   <ChatNavItem
+//     setActiveLink={this._setActiveLink}
+//     key={num}
+//     item={item}
+//     itemNum={num}
+//     openChat={this.props.openGroupChat ? this.state.openChat === num : false}
+//     navItem={item}
+//     handleHeaderClick={this.props.handleHeaderClick}
+//   />
+// )}

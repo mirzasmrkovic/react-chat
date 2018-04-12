@@ -27,9 +27,7 @@ class Chat extends Component {
     groupChat: groupChat,
     openLeftSide: true,
     openRightSide: true,
-    openGroupChat: false,
-    groupChatClicked: '',
-    groupChatOpened: -1,
+    btnOpened: 0,
     openChat: 0,
   }
 
@@ -48,7 +46,7 @@ class Chat extends Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    if (!this.state.openGroupChat) {
+    if (this.state.btnOpened === 0) {
       const modifiedChatUserItem = {
         ...this.state.chatUserItem[this.state.openChat],
         chatReplies: [
@@ -71,9 +69,9 @@ class Chat extends Component {
     else {
       if (this.state.reply !== '') {
         const modifiedChatUserItem = {
-          ...this.state.groupChat[this.state.groupChatOpened],
+          ...this.state.groupChat[this.state.openChat],
           groupItems: [
-            ...this.state.groupChat[this.state.groupChatOpened].groupItems,
+            ...this.state.groupChat[this.state.openChat].groupItems,
             {chatUserImg: this.state.userInfo.userImg, onlineStatus: true, chatUsername: this.state.userInfo.username, chatUserMsg: this.state.reply}
           ]
         }
@@ -81,7 +79,7 @@ class Chat extends Component {
           this.setState({
             reply: '',
             groupChat: this.state.groupChat.map((item, num) => {
-              if (num === this.state.groupChatOpened) {
+              if (num === this.state.openChat) {
                 return modifiedChatUserItem
               }
               return item
@@ -117,8 +115,6 @@ class Chat extends Component {
   _setActiveLink = (chatNum) => {
     this.setState({
       openChat: chatNum,
-      openGroupChat: false,
-      groupChatClicked: '',
     })
     if (this.state.openChat !== chatNum) {
       this.setState({
@@ -127,12 +123,12 @@ class Chat extends Component {
     }
   }
 
-  _handleHeaderClick = (e, itemNum) => {
+  _handleBtnOpened = (num) => {
+    if (num !== this.state.btnOpened) {
+      this._setActiveLink(0)
+    }
     this.setState({
-      openGroupChat: true,
-      groupChatClicked: e.target.textContent,
-      openChat: -1,
-      groupChatOpened: itemNum,
+      btnOpened: num,
     })
   }
 
@@ -153,8 +149,6 @@ class Chat extends Component {
           username={userInfo.username}
           userImg={userInfo.userImg}
           msgNum={150}
-          handleHeaderClick={this._handleHeaderClick}
-          openGroupChat={this.state.openGroupChat}
         />
         <div className='chat-content-container flex-property flex-wrap-wrap'>
           <OpenSideMenu toggleSideMenu={this.toggleSideMenu} side={false}/> {/*false = left*/}
@@ -165,9 +159,11 @@ class Chat extends Component {
             </div>
             <div className='chat-msg-container'>
               <GroupBtnContainer
-
+                handleChatType={this._handleChatType}
+                handleBtnOpened={this._handleBtnOpened}
+                btnOpened={this.state.btnOpened}
               />
-              {this.state.chatUserItem.map((item, num) =>
+              {this.state.btnOpened === 0 ? this.state.chatUserItem.map((item, num) =>
                 <ChatUserItem
                   setActiveLink={this._setActiveLink}
                   key={num}
@@ -179,12 +175,27 @@ class Chat extends Component {
                   userPosting={item.chatReplies[item.chatReplies.length-1].userPosting}
                   openChat={this.state.openChat === num}
                 />
-              )}
+              ) :
+              this.state.groupChat.map((item,num) =>
+                <ChatUserItem
+                  setActiveLink={this._setActiveLink}
+                  key={num}
+                  itemNum={num}
+                  groupOpen={true}
+                  chatFriendImg={item.groupLogo}
+                  onlineStatus={item.onlineStatus}
+                  friendName={item.groupChatType}
+                  friendLastMsg={item.groupItems[item.groupItems.length-1].chatUserMsg}
+                  userPosting={item.groupItems[item.groupItems.length-1].chatUsername.toLowerCase() === this.state.userInfo.username.toLowerCase()}
+                  openChat={this.state.openChat === num}
+                />
+              )
+              }
             </div>
           </div>}
             <div className='chat-middle-container flex-property flex-direction-column flex-2'>
               <div ref={(el) => { this.chatTextContainer = el; }} className='chat-text-container'>
-                {!this.state.openGroupChat ? this.state.chatUserItem[this.state.openChat].chatReplies.map((item, num) =>
+                {this.state.btnOpened === 0 ? this.state.chatUserItem[this.state.openChat].chatReplies.map((item, num) =>
                   <ChatItem
                     chatFriendImg={this.state.chatUserItem[this.state.openChat].chatFriendImg}
                     onlineStatus={this.state.chatUserItem[this.state.openChat].onlineStatus}
@@ -194,32 +205,26 @@ class Chat extends Component {
                     userImg={userInfo.userImg}
                   />
                 ) :
-                this.state.groupChat.map((item, num) =>
-                  this.state.groupChatClicked === item.groupChatType ?
-                  item.groupItems.map((x) =>
+                this.state.groupChat[this.state.openChat].groupItems.map((item, num) =>
                     <ChatItem
-                      chatFriendImg={x.chatUserImg}
-                      onlineStatus={x.onlineStatus}
-                      userPosting={x.chatUsername.toLowerCase() === userInfo.username.toLowerCase()}
-                      chatReply={x.chatUserMsg}
+                      chatFriendImg={item.chatUserImg}
+                      onlineStatus={item.onlineStatus}
+                      userPosting={item.chatUsername.toLowerCase() === userInfo.username.toLowerCase()}
+                      chatReply={item.chatUserMsg}
                       username={userInfo.username}
                       userImg={userInfo.userImg}
                     />
-                  ) :
-                  ''
                 )
                 }
               </div>
               <ChatTextarea value={this.state.reply} handleChange={this.handleChange} handleSubmit={this.handleSubmit} />
             </div>
-            {this.state.openRightSide && this.state.groupChatClicked === '' ? <ChatProfileContainer
+            {this.state.openRightSide && <ChatProfileContainer
               chatFriendImg={this.state.chatUserItem[this.state.openChat].chatFriendImg}
               chatFriendName={this.state.chatUserItem[this.state.openChat].friendName}
               friendEmail={this.state.chatUserItem[this.state.openChat].friendEmail}
               friendAge={this.state.chatUserItem[this.state.openChat].userAge}
-            /> :
-            ''
-          }
+            />}
         </div>
       </div>
     );

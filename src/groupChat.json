@@ -2,6 +2,7 @@
 	"groupChat": [
 		{
       "groupChatType": "women",
+			"groupLogo": "https://i.imgur.com/U1ZSN7W.png",
       "groupItems": [
         {
           "chatUserImg": "https://i.imgur.com/1ASbjkR.jpg",
@@ -31,6 +32,7 @@
 		},
     {
       "groupChatType": "men",
+			"groupLogo": "https://i.imgur.com/U1ZSN7W.png",
       "groupItems": [
         {
           "chatUserImg": "https://i.imgur.com/1ASbjkR.jpg",
@@ -60,6 +62,7 @@
 		},
     {
       "groupChatType": "transexual",
+			"groupLogo": "https://i.imgur.com/U1ZSN7W.png",
       "groupItems": [
         {
           "chatUserImg": "https://i.imgur.com/1ASbjkR.jpg",
@@ -77,12 +80,6 @@
           "chatUserImg": "https://i.imgur.com/1ASbjkR.jpg",
           "onlineStatus": true,
           "chatUsername": "Bob Marley",
-          "chatUserMsg": "trans Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam cursus pulvinar dolor."
-        },
-        {
-          "chatUserImg": "https://i.imgur.com/1ASbjkR.jpg",
-          "onlineStatus": true,
-          "chatUsername": "Sonia Mort",
           "chatUserMsg": "trans Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam cursus pulvinar dolor."
         }
       ]
