@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 
 class ChatUserItem extends Component {
   render() {
-    // console.log(this.props.userPosting)
     return (
       <div onClick={() => this.props.setActiveLink(this.props.itemNum)} className={(this.props.openChat && true ? 'chat-user-item-open' : '') + ' chat-user-item flex-property align-items-center'}>
         <div className='chat-user-img-container'>

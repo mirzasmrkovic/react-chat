@@ -28,7 +28,9 @@ class Chat extends Component {
     openLeftSide: true,
     openRightSide: true,
     btnOpened: 0,
+    prevOpenChat: 0,
     openChat: 0,
+    lastChatOpened: -1,
   }
 
   constructor(props) {
@@ -121,15 +123,21 @@ class Chat extends Component {
         reply: '',
       })
     }
+    console.log(this.state.openChat + ' _setActiveLink')
   }
 
   _handleBtnOpened = (num) => {
-    if (num !== this.state.btnOpened) {
-      this._setActiveLink(0)
-    }
     this.setState({
       btnOpened: num,
     })
+  }
+
+  _handlePrevState = (prevState) => {
+    this.setState({
+      prevOpenChat: prevState.openChat,
+    })
+    this._setActiveLink(this.state.prevOpenChat)
+    console.log(this.state.openChat + ' _handlePrevState')
   }
 
   componentDidMount() {
@@ -137,12 +145,16 @@ class Chat extends Component {
     this._focusInput()
   }
 
-  componentDidUpdate() {
+  componentDidUpdate(prevProps, prevState, snapshot) {
     this.scrollToBottom()
     this._focusInput()
+
+    prevState.btnOpened !== this.state.btnOpened ? this._handlePrevState(prevState) : ''
+    console.log(this.state.openChat + ' componentDidUpdate')
   }
 
   render() {
+    console.log(this.state.openChat + ' chat')
     return (
       <div className="chat-container">
         <Header
