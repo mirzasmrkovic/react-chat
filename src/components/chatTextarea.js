@@ -1,31 +1,8 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
+import ItemPopup from './itemPopup.js'
 
 class ChatTextarea extends Component {
-  state = {
-    openPopup: false,
-  }
-
-  _handlePopup = () => {
-    this.setState({
-      openPopup: !this.state.openPopup,
-    })
-  }
-
-  handleClickOutside = (e) => {
-    if ((this.state.openPopup === true) && (e.target.className !== 'chat-icon-item')) {
-      this._handlePopup()
-    }
-  }
-
-  componentDidMount() {
-    document.addEventListener('mousedown', this.handleClickOutside)
-  }
-
-  componentWillUnmount() {
-    document.removeEventListener('mousedown', this.handleClickOutside)
-  }
-
   render(){
     return(
       <div className='chat-textarea-container'>
@@ -37,17 +14,16 @@ class ChatTextarea extends Component {
           <div className='chat-icon-item'><i className="popup-img fa fa-bold"></i></div>
           <div className='chat-icon-item'><i className="popup-img fa fa-italic"></i></div>
           <div className='chat-icon-item'><i className="popup-img fa fa-underline"></i></div>
-          <div onClick={this._handlePopup} className='chat-icon-item'>
-            <i className="popup-img fa fa-image"></i>
-            {this.state.openPopup && <div className='chat-icon-item-popup flex-property justify-content-center'>
-              <div className='chat-icon-popup-title title-xs'>Upload image</div>
-              <div>
-                <i className="fa fa-upload"></i>
-                <div className='title-m'>Upload</div>
-              </div>
-            </div>}
-          </div>
-          <div className='chat-icon-item'><i className="popup-img fa fa-smile-o"></i></div>
+          <ItemPopup popupImg='image'>
+            <div className='chat-icon-popup-title title-xs'>Upload image</div>
+            <div>
+              <i className="fa fa-upload"></i>
+              <div className='title-m'>Upload</div>
+            </div>
+          </ItemPopup>
+          <ItemPopup popupImg='smile-o'>
+            <div>smileys</div>
+          </ItemPopup>
         </div>
       </div>
     )

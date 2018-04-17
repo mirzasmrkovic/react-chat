@@ -9,7 +9,6 @@ class GroupProfileContainer extends Component {
   }
 
   render() {
-    console.log(this.props.openChat)
     return(
       <div className='chat-profile-container group-profile-container flex-property justify-content-center'>
         <div className='group-info flex-property align-items-center'>
