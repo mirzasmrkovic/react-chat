@@ -1,7 +1,7 @@
 {
 	"groupChat": [
 		{
-      "groupChatType": "women",
+      "groupName": "women",
 			"groupLogo": "https://i.imgur.com/U1ZSN7W.png",
       "groupItems": [
         {
@@ -28,10 +28,42 @@
           "chatUsername": "Sonia Mort",
           "chatUserMsg": "4women Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam cursus pulvinar dolor."
         }
-      ]
+      ],
+			"groupUsers": [
+				{
+					"groupUsername": "suellen langley",
+					"groupUserImg": "https://i.imgur.com/1ls2fTv.png",
+					"userLink": "#"
+				},
+				{
+					"groupUsername": "sonia mort",
+					"groupUserImg": "https://i.imgur.com/1ls2fTv.png",
+					"userLink": "#"
+				},
+				{
+					"groupUsername": "bob marley",
+					"groupUserImg": "https://i.imgur.com/1ls2fTv.png",
+					"userLink": "#"
+				},
+				{
+					"groupUsername": "delicia callie",
+					"groupUserImg": "https://i.imgur.com/1ls2fTv.png",
+					"userLink": "#"
+				},
+				{
+					"groupUsername": "lindsay norwood",
+					"groupUserImg": "https://i.imgur.com/1ls2fTv.png",
+					"userLink": "#"
+				},
+				{
+					"groupUsername": "sophie glover",
+					"groupUserImg": "https://i.imgur.com/1ls2fTv.png",
+					"userLink": "#"
+				}
+			]
 		},
     {
-      "groupChatType": "men",
+      "groupName": "men",
 			"groupLogo": "https://i.imgur.com/U1ZSN7W.png",
       "groupItems": [
         {
@@ -58,10 +90,42 @@
           "chatUsername": "Sonia Mort",
           "chatUserMsg": "men Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam cursus pulvinar dolor."
         }
-      ]
+      ],
+			"groupUsers": [
+				{
+					"groupUsername": "jaki ibbott",
+					"groupUserImg": "https://i.imgur.com/1ls2fTv.png",
+					"userLink": "#"
+				},
+				{
+					"groupUsername": "sonia mort",
+					"groupUserImg": "https://i.imgur.com/1ls2fTv.png",
+					"userLink": "#"
+				},
+				{
+					"groupUsername": "bob marley",
+					"groupUserImg": "https://i.imgur.com/1ls2fTv.png",
+					"userLink": "#"
+				},
+				{
+					"groupUsername": "delicia callie",
+					"groupUserImg": "https://i.imgur.com/1ls2fTv.png",
+					"userLink": "#"
+				},
+				{
+					"groupUsername": "lindsay norwood",
+					"groupUserImg": "https://i.imgur.com/1ls2fTv.png",
+					"userLink": "#"
+				},
+				{
+					"groupUsername": "sophie glover",
+					"groupUserImg": "https://i.imgur.com/1ls2fTv.png",
+					"userLink": "#"
+				}
+			]
 		},
     {
-      "groupChatType": "transexual",
+      "groupName": "transexual",
 			"groupLogo": "https://i.imgur.com/U1ZSN7W.png",
       "groupItems": [
         {
@@ -82,7 +146,39 @@
           "chatUsername": "Bob Marley",
           "chatUserMsg": "trans Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam cursus pulvinar dolor."
         }
-      ]
+      ],
+			"groupUsers": [
+				{
+					"groupUsername": "preston christison",
+					"groupUserImg": "https://i.imgur.com/1ls2fTv.png",
+					"userLink": "#"
+				},
+				{
+					"groupUsername": "sonia mort",
+					"groupUserImg": "https://i.imgur.com/1ls2fTv.png",
+					"userLink": "#"
+				},
+				{
+					"groupUsername": "bob marley",
+					"groupUserImg": "https://i.imgur.com/1ls2fTv.png",
+					"userLink": "#"
+				},
+				{
+					"groupUsername": "delicia callie",
+					"groupUserImg": "https://i.imgur.com/1ls2fTv.png",
+					"userLink": "#"
+				},
+				{
+					"groupUsername": "lindsay norwood",
+					"groupUserImg": "https://i.imgur.com/1ls2fTv.png",
+					"userLink": "#"
+				},
+				{
+					"groupUsername": "sophie glover",
+					"groupUserImg": "https://i.imgur.com/1ls2fTv.png",
+					"userLink": "#"
+				}
+			]
 		}
 	]
 }

@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import ChatIconItem from './chatIconItem.js'
 
 class ChatTextarea extends Component {
   state = {

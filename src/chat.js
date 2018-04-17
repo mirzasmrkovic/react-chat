@@ -9,7 +9,10 @@ import './App.css';
 import Header from './components/header.js'
 import ChatUserItem from './components/chatUserItem.js'
 import ChatItem from './components/chatItem.js'
+
 import ChatProfileContainer from './components/chatProfileContainer.js'
+import GroupProfileContainer from './components/groupProfileContainer.js'
+
 import OpenSideMenu from './components/openSideMenu.js'
 import GroupBtnContainer from './components/groupBtnContainer.js'
 
@@ -30,7 +33,7 @@ class Chat extends Component {
     btnOpened: 0,
     prevOpenChat: 0,
     openChat: 0,
-    lastChatOpened: -1,
+    lastChatOpened: 0,
   }
 
   constructor(props) {
@@ -159,8 +162,8 @@ class Chat extends Component {
           msgNum={150}
         />
         <div className='chat-content-container flex-property flex-wrap-wrap'>
-          <OpenSideMenu toggleSideMenu={this.toggleSideMenu} side={false}/> {/*false = left*/}
-          <OpenSideMenu toggleSideMenu={this.toggleSideMenu} side={true}/> {/*true = right*/}
+          <OpenSideMenu toggleSideMenu={this.toggleSideMenu} side={true}/>
+          <OpenSideMenu toggleSideMenu={this.toggleSideMenu} side={false}/>
           {this.state.openLeftSide && <div className='chat-side-container flex-1'>
             <div className='msg-search-bar flex-property justify-content-center align-items-center'>
               <input placeholder='Search messages'/>
@@ -192,7 +195,7 @@ class Chat extends Component {
                   groupOpen={true}
                   chatFriendImg={item.groupLogo}
                   onlineStatus={item.onlineStatus}
-                  friendName={item.groupChatType}
+                  friendName={item.groupName}
                   friendLastMsg={item.groupItems[item.groupItems.length-1].chatUserMsg}
                   userPosting={item.groupItems[item.groupItems.length-1].chatUsername.toLowerCase() === this.state.userInfo.username.toLowerCase()}
                   openChat={this.state.openChat === num}
@@ -214,25 +217,32 @@ class Chat extends Component {
                   />
                 ) :
                 this.state.groupChat[this.state.openChat].groupItems.map((item, num) =>
-                    <ChatItem
-                      chatFriendImg={item.chatUserImg}
-                      onlineStatus={item.onlineStatus}
-                      userPosting={item.chatUsername.toLowerCase() === userInfo.username.toLowerCase()}
-                      chatReply={item.chatUserMsg}
-                      username={userInfo.username}
-                      userImg={userInfo.userImg}
-                    />
+                  <ChatItem
+                    chatFriendImg={item.chatUserImg}
+                    onlineStatus={item.onlineStatus}
+                    userPosting={item.chatUsername.toLowerCase() === userInfo.username.toLowerCase()}
+                    chatReply={item.chatUserMsg}
+                    username={userInfo.username}
+                    userImg={userInfo.userImg}
+                  />
                 )
                 }
               </div>
               <ChatTextarea value={this.state.reply} handleChange={this.handleChange} handleSubmit={this.handleSubmit} />
             </div>
-            {this.state.openRightSide && <ChatProfileContainer
+            {this.state.btnOpened === 0 ?
+              this.state.openRightSide && <ChatProfileContainer
               chatFriendImg={this.state.chatUserItem[this.state.openChat].chatFriendImg}
               chatFriendName={this.state.chatUserItem[this.state.openChat].friendName}
               friendEmail={this.state.chatUserItem[this.state.openChat].friendEmail}
               friendAge={this.state.chatUserItem[this.state.openChat].userAge}
-            />}
+            /> :
+            this.state.openRightSide && <GroupProfileContainer
+              groupLogo={this.state.groupChat[this.state.openChat].groupLogo}
+              groupName={this.state.groupChat[this.state.openChat].groupName}
+              openChat={this.state.openChat}
+            />
+            }
         </div>
       </div>
     );

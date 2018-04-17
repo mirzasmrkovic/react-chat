@@ -18,7 +18,7 @@ class ChatProfileContainer extends Component {
 
   render() {
     return (
-      <div className='chat-profile-container flex-property justify-content-center flex-1'>
+      <div className='chat-profile-container flex-property justify-content-center'>
         <ul className='chat-profile-nav flex-property'>
           {navItems.map((item,num) =>
             <li onClick={() => this._handleNav(num)} className={(this.state.openChat === num ? 'profile-nav-open' : 'profile-nav') + ' flex-property justify-content-center align-items-center'}>{item}</li>
